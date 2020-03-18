@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/opt/api/ansible/roles'
+let g:netrw_dirhist_2='/opt/api/ansible'
+let g:netrw_dirhist_3='/opt/api'
+let g:netrw_dirhist_4='/opt'
+let g:netrw_dirhist_5='/opt/api/ansible/playbooks'
+let g:netrw_dirhist_6='/opt/api/ansible/roles/apigtw_instance_systemd/tasks'
+let g:netrw_dirhist_7='/opt/api/inventories-grp-hors-prod'
+let g:netrw_dirhist_8='/opt/api/inventories-grp-hors-prod/group_vars'
+let g:netrw_dirhist_9='/opt/api/inventories-grp-hors-prod'
