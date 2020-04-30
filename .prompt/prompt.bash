@@ -116,6 +116,14 @@ function __prompt_get_git_stuff() {
   fi
 }
 
+function set_virtualenv () {
+  if test -z "$VIRTUAL_ENV" ; then
+      PYTHON_VIRTUALENV=""
+  else
+      PYTHON_VIRTUALENV="${BLUE}[`basename \"$VIRTUAL_ENV\"`]${COLOR_NONE} "
+  fi
+}
+
 # This function creates prompt.
 function __prompt_command() {
   # Make the dollar red if the last command exited with error.
@@ -133,10 +141,12 @@ function __prompt_command() {
   __prompt_get_git_stuff
   local git_stuff="${__prompt_git_color}${__prompt_retval}"
   local dollar="${dollar_color}$"
+  set_virtualenv
 
   # Set the PS1 to the new prompt.
-  PS1="${short_pwd}${git_stuff} ${host} \n${dollar}${__prompt_no_color} "
+  PS1="${PYTHON_VIRTUALENV}${short_pwd}${git_stuff} ${host} \n${dollar}${__prompt_no_color} "
 }
+
 
 # Tell bash about the function above.
 export PROMPT_COMMAND=__prompt_command
